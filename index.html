@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crush Calculator — Aryan</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="page">
+<div class="brand">♛ <span>aryan</span> ♥</div>
+<div class="hero-heart">♥</div><h1>CRUSH CALCULATOR</h1><p class="tagline">♥ Is it meant to be? ♥</p>
+<section class="card"><form method="POST">
+<label>👤 YOUR NAME</label><input name="name1" value="{{ name1 }}" placeholder="Enter your name..." required>
+<div class="heart-divider">♥</div>
+<label>♥ CRUSH'S NAME</label><input name="name2" value="{{ name2 }}" placeholder="Enter your crush's name..." required>
+<button>💘 CALCULATE LOVE</button></form>
+{% if result is not none %}<div class="result"><div class="circle"><strong>{{ result }}%</strong><span>COMPATIBILITY</span></div>
+<div><h2>{% if result >= 80 %}Great Match! 💕{% elif result >= 60 %}Cute Match! 💗{% else %}Maybe It's Complicated! 💫{% endif %}</h2>
+<p>{% if result >= 80 %}You both have a strong connection. Keep believing in love! 💕{% elif result >= 60 %}There could be something special here. Keep smiling! ✨{% else %}Who knows what the future holds? Give it a chance! 💖{% endif %}</p></div></div>{% endif %}
+<p class="privacy">🔒 Al utilizar esta calculadora, aceptas que los nombres introducidos y el resultado de compatibilidad pueden almacenarse.</p>
+</section></main></body></html>

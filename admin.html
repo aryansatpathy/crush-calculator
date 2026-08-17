@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body class="admin-page"><div class="dashboard">
+<header><div class="brand">♛ <span>aryan</span> ♥</div><h1>Crush Calculator — Admin Dashboard</h1><a class="logout" href="{{ url_for('logout') }}">Logout</a></header>
+<div class="table-wrap"><h2>📋 All Submissions</h2><table><tr><th>#</th><th>Name 1</th><th>Name 2</th><th>Percentage</th><th>Date & Time</th></tr>
+{% for r in rows %}<tr><td>{{ r.id }}</td><td>{{ r.name1 }}</td><td>{{ r.name2 }}</td><td class="percentage">{{ r.percentage }}%</td><td>{{ r.created_at }}</td></tr>
+{% else %}<tr><td colspan="5">No submissions yet.</td></tr>{% endfor %}</table></div>
+<p class="private-note">🔒 This data is private and only visible to the developer.</p></div></body></html>
